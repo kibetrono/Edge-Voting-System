@@ -11,30 +11,57 @@
 </head>
 <body>
     <h1 class="text-info text-center">Registered Voters</h1>
-    <table class="table table-dark table-striped">
+    <table class="table table-dark table-striped table-hover">
         <tr>
             <th>Name</th>
             <th>Id Number</th>
             <th>County</th>
             <th>Gender</th>
             <th>Phone Number</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th>Update </th>
+            <th>Delete </th>
         </tr>
         <?php
     require_once 'connect.php';
 
-    $sql="SELECT * FROM voters "
+    $sql="SELECT * FROM voters ";
+
+    $voters=mysqli_query($conn,$sql);
+
+
+    
+// loop voters
+foreach ($voters as $voter){
+
+    $votername=$voter["name"];
+    $voterid=$voter["id_number"];
+    $votercounty=$voter["county"];
+    $votergender=$voter["gender"];
+    $voterphone=$voter["phone"];
+
+
+    echo "
+    <tr>
+    
+    <td>$votername</td>
+    <td>$voterid</td>
+    <td>$votercounty</td>
+    <td>$votergender</td>
+    <td>$voterphone</td>
+ 
+    <td><a class='btn btn-primary' href=''>Update</a></td>
+    <td><a class='btn btn-danger' href='delete.php?voter_id=$voterid'>Delete</a></td>
+   
+    </tr>
+    
+    ";
+  
+}
+
+
+
         ?>
-        <tr>
-            <th>dd</th>
-            <th>d</th>
-            <th>sjshs</th>
-            <th>sjshs</th>
-            <th>sjshs</th>
-            <th>sjshs</th>
-            <th>sjshs</th>
-        </tr>
+
     </table>
 </body>
 </html>
