@@ -7,7 +7,7 @@ if(isset($_POST['vote'])){
     $phone=$_POST['phone'];
  require_once "connect.php";
 
-$sql="INSERT INTO voters (id,name, id_number, county, gender, phone) VALUES (null,'$name','$id_number','$county','$gender','$phone')";
+$sql="INSERT INTO voters (name, id_number, county, gender, phone) VALUES ('$name','$id_number','$county','$gender','$phone')";
 $query=mysqli_query($conn,$sql);
 if($query){
     echo "Successfully inserted data"; 

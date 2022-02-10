@@ -50,7 +50,7 @@ foreach ($voters as $voter){
     <td>$voterphone</td>
  
     <td><a class='btn btn-primary' href=''>Update</a></td>
-    <td><a class='btn btn-danger' href='delete.php?voter_id=$voterid'>Delete</a></td>
+    <td><a class='btn btn-danger' href='delete.php?v=$voterid'>Delete</a></td>
    
     </tr>
     
