@@ -10,7 +10,8 @@ if(isset($_POST['vote'])){
 $sql="INSERT INTO voters (name, id_number, county, gender, phone) VALUES ('$name','$id_number','$county','$gender','$phone')";
 $query=mysqli_query($conn,$sql);
 if($query){
-    echo "Successfully inserted data"; 
+
+header("location:voters.php");
 }else{
     echo "Error: " . $sql . ":-" . mysqli_error($conn);
 }

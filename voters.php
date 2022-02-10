@@ -32,9 +32,9 @@
     
 // loop voters
 foreach ($voters as $voter){
-
+    $voterid=$voter["id"];
     $votername=$voter["name"];
-    $voterid=$voter["id_number"];
+    $voteridnum=$voter["id_number"];
     $votercounty=$voter["county"];
     $votergender=$voter["gender"];
     $voterphone=$voter["phone"];
@@ -44,12 +44,12 @@ foreach ($voters as $voter){
     <tr>
     
     <td>$votername</td>
-    <td>$voterid</td>
+    <td>$voteridnum</td>
     <td>$votercounty</td>
     <td>$votergender</td>
     <td>$voterphone</td>
  
-    <td><a class='btn btn-primary' href=''>Update</a></td>
+    <td><a class='btn btn-primary' href='update.php?u_id=$voterid&u_name=$votername&u_county=$votercounty&u_phone=$voterphone'>Update</a></td>
     <td><a class='btn btn-danger' href='delete.php?v=$voterid'>Delete</a></td>
    
     </tr>
