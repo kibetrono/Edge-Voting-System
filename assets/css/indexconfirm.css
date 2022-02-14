@@ -1,0 +1,15 @@
+
+input[type='text'],[type='email'],[type='password']{
+    width:50%;
+    margin: auto;
+
+}
+input[type='submit']{
+    margin: auto;
+}
+form{
+    width:50%;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
